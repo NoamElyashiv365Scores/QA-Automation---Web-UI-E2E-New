@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-export class PopupsAndToasts {
+export class PopupsWizardsAndToasts {
   readonly page: Page;
   readonly cookiesWizard: Locator;
   readonly faveLeaguePopup: Locator;

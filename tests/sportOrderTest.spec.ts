@@ -2,9 +2,9 @@ import { test, expect } from "@playwright/test";
 import { PopupsWizardsAndToasts } from "../pages/popupsWizardsAndToasts";
 import { Header } from "../pages/header";
 test("sportOrderTest", async ({ page }) => {
+  const popupsWizardsAndToasts = new PopupsWizardsAndToasts(page);
   //goes to the English (UK) version of the site
   await page.goto("https://365scores.com/en-uk");
-  const popupsWizardsAndToasts = new PopupsWizardsAndToasts(page);
   await test.step(`Closes the "Accept cookies" wizard`, async () => {
     await popupsWizardsAndToasts.closeCookiesWizard();
   });
