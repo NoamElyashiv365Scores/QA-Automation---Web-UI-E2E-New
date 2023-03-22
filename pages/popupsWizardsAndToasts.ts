@@ -14,9 +14,7 @@ export class PopupsWizardsAndToasts {
   }
   //Closes the "Accept cookies" wizard
   async closeCookiesWizard() {
-    try {
-      await this.cookiesWizard.click();
-    } catch (e) {}
+    await this.cookiesWizard.click();
   }
   async closeFaveLeaguePopup() {
     try {
