@@ -10,16 +10,18 @@ export class Header {
     let i = 1;
 
     //gets the displayed names of the 8 sports that are displayed in the list at the top of the site [not including thouse that can only be seen by expanding the list]
-    for (i = 1; i < 8; i++) {
-      let val = await this.page
-        .locator("xpath=" + sportDisplayName + i + "]/button/div")
-        .textContent();
-      if (val == null) {
-        sportNames.push("null");
-      } else {
-        sportNames.push(val);
+    try {
+      for (i = 1; i < 8; i++) {
+        let val = await this.page
+          .locator("xpath=" + sportDisplayName + i + "]/button/div")
+          .textContent();
+        if (val == null) {
+          sportNames.push("null");
+        } else {
+          sportNames.push(val);
+        }
       }
-    }
+    } catch {}
     const base = [
       "Football",
       "Basketball",
