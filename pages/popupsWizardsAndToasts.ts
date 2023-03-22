@@ -14,6 +14,7 @@ export class PopupsWizardsAndToasts {
   }
   //Closes the "Accept cookies" wizard
   async closeCookiesWizard() {
+    await this.page.goto("https://365scores.com/en-uk");
     await this.cookiesWizard.click();
   }
   async closeFaveLeaguePopup() {
