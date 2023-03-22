@@ -5,17 +5,20 @@ export class PopupsWizardsAndToasts {
   readonly faveLeaguePopup: Locator;
   constructor(page: Page) {
     this.page = page;
-    this.cookiesWizard = page.locator(
+    /* this.cookiesWizard = page.locator(
       "xpath=//div[contains(@class, 'popup')]//button[contains(@id, 'agree')]"
-    );
+    );*/
     this.faveLeaguePopup = page.locator(
       "css=div[class*='wizard-widget'] > button"
     );
   }
   //Closes the "Accept cookies" wizard
   async closeCookiesWizard() {
-    await this.page.goto("https://365scores.com/en-uk");
-    await this.cookiesWizard.click();
+    await this.page
+      .locator(
+        "xpath=//div[contains(@class, 'popup')]//button[contains(@id, 'agree')]"
+      )
+      .click();
   }
   async closeFaveLeaguePopup() {
     try {
